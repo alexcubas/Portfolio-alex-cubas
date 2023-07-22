@@ -2,15 +2,15 @@
   "interests": [
     {
       "name": "GAMES",
-      "img": "coffe-icon.svg"
+      "img": "game-icon.svg"
     },
     {
       "name": "MUSIC",
-      "img": "food-icon.svg"
+      "img": "music-icon.svg"
     },
     {
       "name": "COFFEE",
-      "img": "game-icon.svg"
+      "img": "coffee-icon.svg"
     },
     {
       "name": "GYM",
@@ -30,7 +30,7 @@
     },
     {
       "name": "FOOD",
-      "img": "food-icon.svg"
+      "img": "food-icon.png"
     }
   ]
 }

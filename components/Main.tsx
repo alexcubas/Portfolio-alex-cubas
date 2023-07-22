@@ -35,8 +35,8 @@ export default function Main() {
         </Flex>
       </Flex>
       <Flex
-        w={"750px"}
-        h={"815px"}
+        h={"auto"}
+        w={"auto"}
         alignSelf={"flex-end"}
         justify={"center"}
         mr={"120px"}
