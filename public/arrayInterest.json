@@ -1,0 +1,36 @@
+{
+  "interests": [
+    {
+      "name": "GAMES",
+      "img": "coffe-icon.svg"
+    },
+    {
+      "name": "MUSIC",
+      "img": "food-icon.svg"
+    },
+    {
+      "name": "COFFEE",
+      "img": "game-icon.svg"
+    },
+    {
+      "name": "GYM",
+      "img": "gym-icon.svg"
+    },
+    {
+      "name": "SERIES",
+      "img": "series-icon.svg"
+    },
+    {
+      "name": "TRAVEL",
+      "img": "travel-icon.svg"
+    },
+    {
+      "name": "INVESTMENT",
+      "img": "investment-icon.svg"
+    },
+    {
+      "name": "FOOD",
+      "img": "food-icon.svg"
+    }
+  ]
+}

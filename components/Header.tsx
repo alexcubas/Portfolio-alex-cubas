@@ -10,6 +10,8 @@ export default function HeaderDesktop() {
       textStyle={"Bold"}
       fontSize={"text1"}
       position={"fixed"}
+      bg={"linear-gradient(180deg, #343434 0%, rgba(52, 52, 52, 0.83) 100%)"}
+      zIndex={10}
     >
       <Flex align={"center"} gap={"60px"} ml={"35px"}>
         <Img
