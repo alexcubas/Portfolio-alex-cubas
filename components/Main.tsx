@@ -22,7 +22,11 @@ export default function Main() {
         fontSize={"text1"}
       >
         <Text fontSize={"title"}>ALEXSANDRO CUBAS</Text>
-        <Text id="gradient" fontSize={"subTitle"}>
+        <Text
+          id="gradient"
+          // fontSize={"subTitle"}
+          fontSize={{ lg: "14px", lp: "subTitle", xl: "subTitle" }}
+        >
           FULL STACK DEVELOPER
         </Text>
         <Text opacity={"60%"}>
@@ -35,8 +39,8 @@ export default function Main() {
         </Flex>
       </Flex>
       <Flex
-        h={"auto"}
-        w={"auto"}
+        // h={{ lg: "500px", xl: "auto" }}
+        w={{ lg: "550px", xl: "auto" }}
         alignSelf={"flex-end"}
         justify={"center"}
         mr={"120px"}

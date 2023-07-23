@@ -4,7 +4,7 @@ export default function HeaderDesktop() {
   return (
     <Flex
       w={"100%"}
-      h={"110px"}
+      h={"12%"}
       align={"center"}
       justify={"space-between"}
       textStyle={"Bold"}
