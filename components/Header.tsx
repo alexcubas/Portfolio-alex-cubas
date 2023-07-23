@@ -16,15 +16,15 @@ export default function HeaderDesktop() {
       <Flex align={"center"} gap={"60px"} ml={"35px"}>
         <Img
           src={"/icons/github-icon.svg"}
+          alt="icon-github"
           width="62px"
           height="62px"
-          alt="icon-github"
         />
         <Img
           src={"/icons/linkedin-icon.svg"}
+          alt="icon-linkedin"
           width="52px"
           height="52px"
-          alt="icon-linkedin"
           mx={["60px", "20px", "20px", "20px", "20px"]}
         />
         <Flex direction={"column"}>
