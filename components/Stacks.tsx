@@ -9,6 +9,7 @@ export default function Stacks() {
       w={"100%"}
       align={"center"}
       mb={"100px"}
+      id={"stack"}
     >
       <Flex h={"auto"} direction={"column"} pb={"60px"}>
         <Flex textStyle={"Bold"} fontSize={"subTitle"} gap={"30px"}>
@@ -16,7 +17,7 @@ export default function Stacks() {
           <Text>STACKS</Text>
         </Flex>
       </Flex>
-      <Flex justify={"center"} gap={"15px"} px={"50px"} flexFlow={"row wrap"}>
+      <Flex justify={"center"} px={"50px"} gap={"30px"} wrap={"wrap"}>
         <CardStack
           srcImg="js-icon.png"
           title="JavaScript"
@@ -24,6 +25,7 @@ export default function Stacks() {
           width="229px"
           height="228px"
         />
+
         <CardStack
           srcImg="react-icon.png"
           title="React"
@@ -31,6 +33,7 @@ export default function Stacks() {
           width="262px"
           height="215px"
         />
+
         <CardStack
           srcImg="node-icon.png"
           title="NodeJs"
@@ -38,6 +41,7 @@ export default function Stacks() {
           width="283px"
           height="195px"
         />
+
         <CardStack
           srcImg="mongo-icon.png"
           title="MongoDB"

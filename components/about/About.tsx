@@ -1,13 +1,9 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
-import interestsMap from "../public/arrayInterest.json";
-import CardInterest from "./card/cardInterest";
+import interestsMap from "../../public/arrayInterest.json";
+import CardInterest from "../card/cardInterest";
 
 export default function About() {
-  useEffect(() => {
-    console.log("interestsArray", interestsMap);
-  }, []);
-
   return (
     <Flex
       w={"100%"}
@@ -15,6 +11,7 @@ export default function About() {
       bg={"gray.1000"}
       direction={"column"}
       pb={"60px"}
+      id={"about"}
     >
       <Flex
         mt={"30px"}

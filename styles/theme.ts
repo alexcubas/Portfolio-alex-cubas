@@ -1,6 +1,7 @@
 import { extendTheme, theme } from "@chakra-ui/react";
 
 const breakpoints = {
+  ss: "2rem",
   xs: "35rem", // 576px
   sm: "48rem", // 768px
   md: "62rem", // 992px
@@ -13,6 +14,7 @@ export const stylePersonalProfile = extendTheme({
   colors: {
     green: {
       1000: "#12A652",
+      2000: "#31c66f",
     },
     blue: {
       1000: "#448FF2",

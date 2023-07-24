@@ -23,6 +23,7 @@ export default function CardInterest({
       align={"center"}
       justify={"center"}
       position={"relative"}
+      _hover={{ boxShadow: " 0px 0px 55px -30px rgba(255,255,255,1);" }}
     >
       <Img
         mb={"40px"}

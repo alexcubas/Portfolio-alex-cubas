@@ -25,6 +25,7 @@ export default function CardStack({
       align={"center"}
       justify={"center"}
       gap={"15px"}
+      _hover={{ boxShadow: " 0px 0px 55px -30px rgba(255,255,255,1);" }}
     >
       <Img w={width} h={height} src={`/icons/stacks/${srcImg}`} />
       <Text fontSize={"subTitle"} textStyle={"Bold"}>

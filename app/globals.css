@@ -5,6 +5,11 @@
   -webkit-text-fill-color: transparent;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: #12a652 !important;
+}
+
 /* Estilos da Scrollbar para navegadores WebKit (Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 8px; /* Largura da scrollbar */
