@@ -5,16 +5,7 @@ const breakpoints = {
   sm: "48rem", // 768px
   md: "62rem", // 992px
   lg: "75rem", // 1200px
-  lp: "81.25rem", // 1300px
-  xl: "87.5rem", // 1400px
-};
-
-const sizes = {
-  sm: "640px",
-  md: "768px",
-  lg: "1250px",
-  lp: "1450px",
-  xl: "1600px",
+  xl: "90.625rem", // 1400px
 };
 
 export const stylePersonalProfile = extendTheme({

@@ -31,7 +31,7 @@ export default function About() {
           textAlign={"center"}
           w={"70%"}
           textStyle={"Bold"}
-          fontSize={"text1"}
+          fontSize={{ lg: "text2", xl: "text1" }}
           opacity={"60%"}
         >
           Passionate Full Stack Developer, skilled in creating seamless web
@@ -46,10 +46,18 @@ export default function About() {
       </Flex>
       <Flex justify={"center"}>
         <Flex w={"30%"} direction={"column"}>
-          <Text textStyle={"Bold"} fontSize={"subTitle"} mb={"90px"}>
+          <Text
+            textStyle={"Bold"}
+            fontSize={{ lg: "h1", xl: "subTitle" }}
+            mb={"90px"}
+          >
             Personal Details
           </Text>
-          <Flex fontSize={"text1"} gap={"20px"} justify={"center"}>
+          <Flex
+            fontSize={{ lg: "text2", xl: "text1" }}
+            gap={"20px"}
+            justify={"center"}
+          >
             <Flex
               textColor={"green.1000"}
               textStyle={"Bold"}
@@ -72,7 +80,11 @@ export default function About() {
           </Flex>
         </Flex>
         <Flex w={"60%"} direction={"column"}>
-          <Text textStyle={"Bold"} fontSize={"subTitle"} mb={"50px"}>
+          <Text
+            textStyle={"Bold"}
+            fontSize={{ lg: "h1", xl: "subTitle" }}
+            mb={"50px"}
+          >
             My Interests
           </Text>
           <Flex flexWrap={"wrap"} gap={"30px"} px={"20px"} justify={"center"}>

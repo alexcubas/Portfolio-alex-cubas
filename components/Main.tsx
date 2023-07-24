@@ -19,17 +19,13 @@ export default function Main() {
         justify={"center"}
         textAlign={"center"}
         textStyle={"Bold"}
-        fontSize={"text1"}
+        fontSize={{ lg: "text2", xl: "text1" }}
       >
-        <Text fontSize={"title"}>ALEXSANDRO CUBAS</Text>
-        <Text
-          id="gradient"
-          // fontSize={"subTitle"}
-          fontSize={{ lg: "14px", lp: "subTitle", xl: "subTitle" }}
-        >
+        <Text fontSize={{ lg: "subTitle", xl: "title" }}>ALEXSANDRO CUBAS</Text>
+        <Text id="gradient" fontSize={{ lg: "h1", xl: "subTitle" }}>
           FULL STACK DEVELOPER
         </Text>
-        <Text opacity={"60%"}>
+        <Text opacity={"60%"} px={"30px"}>
           Passionate web development for high-performance solutions, combining
           creativity and technical expertise for exceptional results.
         </Text>
