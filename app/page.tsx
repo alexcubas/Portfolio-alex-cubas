@@ -2,14 +2,17 @@
 
 import About from "@/components/about/About";
 import AboutMob from "@/components/about/AboutMob";
-import Contact from "@/components/Contact";
+import Contact from "@/components/contact/Contact";
 import HeaderDesktop from "@/components/header/Header";
 import HeaderMob from "@/components/header/HeaderMob";
 import Main from "@/components/main/Main";
 import MainMob from "@/components/main/MainMob";
-import Portfolio from "@/components/Portfolio";
-import Stacks from "@/components/Stacks";
+import Portfolio from "@/components/Portfolio/Portfolio";
+import Stacks from "@/components/stack/Stacks";
 import { useBreakpointValue } from "@chakra-ui/react";
+import StacksMob from "../components/stack/StacksMob";
+import PortfolioMob from "@/components/Portfolio/PortfolioMob";
+import ContactMob from "@/components/contact/ContactMob";
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
@@ -25,11 +28,13 @@ export default function Home() {
     <div>
       {isWideVersion ? (
         <>
-          <HeaderMob /> <MainMob /> <AboutMob />
+          <HeaderMob /> <MainMob /> <AboutMob /> <StacksMob /> <PortfolioMob />{" "}
+          <ContactMob />
         </>
       ) : (
         <>
-          <HeaderDesktop /> <Main /> <About />
+          <HeaderDesktop /> <Main /> <About /> <Stacks /> <Portfolio />{" "}
+          <Contact />
         </>
       )}
 

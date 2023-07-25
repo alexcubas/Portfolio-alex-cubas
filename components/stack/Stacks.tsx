@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import CardStack from "./card/cardStack";
+import CardStack from "../card/cardStack";
 
 export default function Stacks() {
   return (
@@ -14,7 +14,7 @@ export default function Stacks() {
       <Flex h={"auto"} direction={"column"} pb={"60px"}>
         <Flex textStyle={"Bold"} fontSize={"subTitle"} gap={"30px"}>
           <Text textColor={"green.1000"}>MY</Text>
-          <Text>STACKS</Text>
+          <Text>STACK</Text>
         </Flex>
       </Flex>
       <Flex justify={"center"} px={"50px"} gap={"30px"} wrap={"wrap"}>

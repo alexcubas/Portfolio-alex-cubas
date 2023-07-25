@@ -1,9 +1,21 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
-import interestsMap from "../../public/arrayInterest.json";
-import CardInterest from "../card/cardInterest";
+import CardInterestMob from "../card/cardInterestMob";
+import { motion, useAnimation } from "framer-motion";
 
 export default function AboutMob() {
+  const controls = useAnimation();
+  useEffect(() => {
+    controls.start({
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.0,
+        delay: 0.3,
+        ease: [0, 0.3, 0.6, 1.0],
+      },
+    });
+  });
   return (
     <Flex
       w={"100%"}
@@ -19,6 +31,9 @@ export default function AboutMob() {
         w={"100%"}
         align={"center"}
         mb={"50px"}
+        as={motion.div}
+        initial={{ y: 150, opacity: 0 }}
+        animate={controls}
       >
         <Flex textStyle={"Bold"} fontSize={"h1"} gap={"15px"}>
           <Text>ABOUT</Text>
@@ -77,53 +92,53 @@ export default function AboutMob() {
             My Interests
           </Text>
           <Flex flexWrap={"wrap"} gap={"30px"} px={"20px"} justify={"center"}>
-            <CardInterest
+            <CardInterestMob
               imagemSrc="game-icon.svg"
               text="GAMES"
-              width="100px"
-              height="55px"
+              width="75px"
+              height="41px"
             />
-            <CardInterest
+            <CardInterestMob
               imagemSrc="music-icon.svg"
               text="MUSIC"
-              width="73px"
-              height="73px"
+              width="54px"
+              height="54px"
             />
-            <CardInterest
+            <CardInterestMob
               imagemSrc="coffee-icon.svg"
               text="COFFEE"
-              width="76px"
-              height="76px"
+              width="55px"
+              height="55px"
             />
-            <CardInterest
+            <CardInterestMob
               imagemSrc="gym-icon.svg"
               text="GYM"
-              width="100px"
-              height="50px"
+              width="75px"
+              height="38px"
             />
-            <CardInterest
+            <CardInterestMob
               imagemSrc="series-icon.svg"
               text="SERIES"
-              width="83px"
-              height="58px"
+              width="61px"
+              height="41px"
             />
-            <CardInterest
+            <CardInterestMob
               imagemSrc="travel-icon.svg"
               text="TRAVEL"
-              width="74px"
-              height="74px"
+              width="55px"
+              height="55px"
             />
-            <CardInterest
+            <CardInterestMob
               imagemSrc="investment-icon.svg"
               text="INVESTMENT"
-              width="94px"
-              height="94px"
+              width="71px"
+              height="71px"
             />
-            <CardInterest
+            <CardInterestMob
               imagemSrc="food-icon.png"
               text="FOOD"
-              width="83px"
-              height="82px"
+              width="61px"
+              height="61px"
             />
           </Flex>
         </Flex>
