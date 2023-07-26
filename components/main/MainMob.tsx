@@ -2,6 +2,7 @@ import { Flex, Img, Text } from "@chakra-ui/react";
 import scrollTo from "../../utils/scroller";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import filterTranslate from "@/utils/filterTranslate";
 
 export default function MainMob() {
   const controls = useAnimation();
@@ -24,7 +25,6 @@ export default function MainMob() {
         bgImage={"/background-img.png"}
         bottom={0}
         zIndex={"10"}
-        id={"home"}
       />
       <Flex
         direction={"column"}
@@ -38,17 +38,16 @@ export default function MainMob() {
         as={motion.div}
         initial={{ y: 150, opacity: 0 }}
         animate={controls}
-        mt={"60px"}
+        mt={"100px"}
       >
-        <Text textStyle={"Bold"} fontSize={"h1"}>
+        <Text textStyle={"Bold"} fontSize={"h1"} id={"home"}>
           ALEXSANDRO CUBAS
         </Text>
         <Text textStyle={"Bold"} id="gradient" fontSize={"text1"}>
-          FULL STACK DEVELOPER
+          {filterTranslate("subtitle")}
         </Text>
         <Text opacity={"60%"} px={"30px"}>
-          Passionate web development for high-performance solutions, combining
-          creativity and technical expertise for exceptional results.
+          {filterTranslate("mainText")}
         </Text>
         <Flex
           gap={"7px"}
@@ -58,7 +57,7 @@ export default function MainMob() {
           cursor={"pointer"}
         >
           <Text textColor={"green.1000"} _hover={{ textColor: "green.2000" }}>
-            Learn more
+            {filterTranslate("mainRead")}
           </Text>
           <Img src="/icons/arrow-back-icon.svg" />
         </Flex>

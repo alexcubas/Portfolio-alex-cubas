@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
 import { stylePersonalProfile } from "@/styles/theme";
+import { ApplicationTranslateProvider } from "@/contexts/provider/applicationTranslateProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,10 +44,11 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        {" "}
         <CacheProvider>
           <ChakraProvider theme={stylePersonalProfile}>
-            {children}
+            <ApplicationTranslateProvider>
+              {children}
+            </ApplicationTranslateProvider>
           </ChakraProvider>
         </CacheProvider>
       </body>

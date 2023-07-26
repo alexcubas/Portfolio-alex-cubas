@@ -5,6 +5,10 @@
   -webkit-text-fill-color: transparent;
 }
 
+.no-link-underline {
+  text-decoration: none !important;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   color: #12a652 !important;

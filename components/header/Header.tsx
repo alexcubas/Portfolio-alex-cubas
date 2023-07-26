@@ -1,3 +1,5 @@
+import ApplicationContext from "@/contexts/provider/contextTranslate";
+import filterTranslate from "@/utils/filterTranslate";
 import phoneLogic from "@/utils/phoneLogic";
 import {
   Flex,
@@ -8,13 +10,13 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
 
 export default function HeaderDesktop() {
+  const { setIsEn, isEn } = useContext(ApplicationContext);
   const [activeSection, setActiveSection] = useState("home");
-
-  const handleSetActiveSection = (sectionId: string) => {
+  const handleSetActiveSection = (sectionId: any) => {
     setActiveSection(sectionId);
   };
 
@@ -74,7 +76,7 @@ export default function HeaderDesktop() {
           offset={-200}
           onSetActive={() => handleSetActiveSection("home")}
         >
-          <Text cursor={"pointer"}>Home</Text>
+          <Text cursor={"pointer"}> {filterTranslate("headerH")}</Text>
           <Flex
             h={"8px"}
             w={"100%"}
@@ -90,9 +92,12 @@ export default function HeaderDesktop() {
           smooth={true}
           duration={500}
           offset={-80}
-          onSetActive={() => handleSetActiveSection("about")}
+          onSetActive={() => {
+            console.log("n entrou aq?");
+            handleSetActiveSection("about");
+          }}
         >
-          <Text cursor={"pointer"}>About</Text>
+          <Text cursor={"pointer"}> {filterTranslate("headerA")}</Text>
           <Flex
             h={"8px"}
             w={"100%"}
@@ -110,7 +115,7 @@ export default function HeaderDesktop() {
           offset={-100}
           onSetActive={() => handleSetActiveSection("stack")}
         >
-          <Text cursor={"pointer"}>Stacks</Text>
+          <Text cursor={"pointer"}> {filterTranslate("headerS")}</Text>
           <Flex
             h={"8px"}
             w={"100%"}
@@ -128,7 +133,7 @@ export default function HeaderDesktop() {
           offset={-80}
           onSetActive={() => handleSetActiveSection("port")}
         >
-          <Text cursor={"pointer"}>Portfolio</Text>
+          <Text cursor={"pointer"}> {filterTranslate("headerP")}</Text>
           <Flex
             h={"8px"}
             w={"100%"}
@@ -158,20 +163,23 @@ export default function HeaderDesktop() {
             phoneLogic();
           }}
         >
-          Contact Me
+          {filterTranslate("headerC")}
         </Button>
         <Img
           src={"/icons/brazil-icon.svg"}
           width="44pxpx"
           height="33px"
           alt="brazil-icon"
-          opacity={"50%"}
+          opacity={isEn ? "50%" : "100%"}
+          onClick={() => setIsEn(false)}
         />
         <Img
           src={"/icons/usa-icon.svg"}
           width="44px"
           height="33px"
           alt="usa-icon"
+          opacity={!isEn ? "50%" : "100%"}
+          onClick={() => setIsEn(true)}
         />
       </Flex>
     </Flex>

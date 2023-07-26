@@ -9,12 +9,18 @@ import Main from "@/components/main/Main";
 import MainMob from "@/components/main/MainMob";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import Stacks from "@/components/stack/Stacks";
-import { useBreakpointValue } from "@chakra-ui/react";
+import { Flex, useBreakpointValue } from "@chakra-ui/react";
 import StacksMob from "../components/stack/StacksMob";
 import PortfolioMob from "@/components/Portfolio/PortfolioMob";
 import ContactMob from "@/components/contact/ContactMob";
+import { useContext, useEffect } from "react";
+import { getTranslate } from "@/hooks/getTranslate";
+import ApplicationContext from "@/contexts/provider/contextTranslate";
 
 export default function Home() {
+  const { getDadosTranslate, dataTranslate, isEn, setIsEn } =
+    useContext(ApplicationContext);
+  console.log("dataTranslate", dataTranslate);
   const isWideVersion = useBreakpointValue({
     ss: true,
     xs: true,
@@ -24,25 +30,20 @@ export default function Home() {
     xl: false,
   });
 
-  return (
-    <div>
-      {isWideVersion ? (
-        <>
-          <HeaderMob /> <MainMob /> <AboutMob /> <StacksMob /> <PortfolioMob />{" "}
-          <ContactMob />
-        </>
-      ) : (
-        <>
-          <HeaderDesktop /> <Main /> <About /> <Stacks /> <Portfolio />{" "}
-          <Contact />
-        </>
-      )}
+  useEffect(() => {
+    getDadosTranslate();
+  }, []);
 
-      {/* <SwiperComponent /> */}
-      {/* <About />
-      <Stacks />
-      <Portfolio />
-      <Contact /> */}
-    </div>
+  return (
+    <Flex>
+      <Flex direction={"column"} display={isWideVersion ? "flex" : "none"}>
+        <HeaderMob /> <MainMob /> <AboutMob /> <StacksMob /> <PortfolioMob />
+        <ContactMob />
+      </Flex>
+      <Flex direction={"column"} display={!isWideVersion ? "flex" : "none"}>
+        <HeaderDesktop /> <Main /> <About /> <Stacks /> <Portfolio />
+        <Contact />
+      </Flex>
+    </Flex>
   );
 }

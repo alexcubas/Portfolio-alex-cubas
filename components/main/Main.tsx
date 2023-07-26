@@ -2,6 +2,7 @@ import { Flex, Img, Text } from "@chakra-ui/react";
 import scrollTo from "../../utils/scroller";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import filterTranslate from "@/utils/filterTranslate";
 
 export default function Main() {
   const controls = useAnimation();
@@ -30,7 +31,7 @@ export default function Main() {
       <Flex
         direction={"column"}
         h={"100%"}
-        w={"850px"}
+        w={"900px"}
         align={"center"}
         justify={"center"}
         textAlign={"center"}
@@ -42,11 +43,10 @@ export default function Main() {
       >
         <Text fontSize={{ lg: "subTitle", xl: "title" }}>ALEXSANDRO CUBAS</Text>
         <Text id="gradient" fontSize={{ lg: "h1", xl: "subTitle" }}>
-          FULL STACK DEVELOPER
+          {filterTranslate("subtitle")}
         </Text>
         <Text opacity={"60%"} px={"30px"}>
-          Passionate web development for high-performance solutions, combining
-          creativity and technical expertise for exceptional results.
+          {filterTranslate("mainText")}
         </Text>
         <Flex
           gap={"7px"}
@@ -56,7 +56,7 @@ export default function Main() {
           cursor={"pointer"}
         >
           <Text textColor={"green.1000"} _hover={{ textColor: "green.2000" }}>
-            Learn more
+            {filterTranslate("mainRead")}
           </Text>
           <Img src="/icons/arrow-back-icon.svg" />
         </Flex>

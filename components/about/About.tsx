@@ -1,9 +1,12 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import interestsMap from "../../public/arrayInterest.json";
 import CardInterest from "../card/cardInterest";
+import ApplicationContext from "@/contexts/provider/contextTranslate";
+import filterTranslate from "@/utils/filterTranslate";
 
 export default function About() {
+  const { isEn } = useContext(ApplicationContext);
   return (
     <Flex
       w={"100%"}
@@ -21,8 +24,8 @@ export default function About() {
         mb={"50px"}
       >
         <Flex textStyle={"Bold"} fontSize={"subTitle"} gap={"30px"}>
-          <Text>ABOUT</Text>
-          <Text textColor={"green.1000"}>ME</Text>
+          <Text> {isEn ? "ABOUT" : "SOBRE"} </Text>
+          <Text textColor={"green.1000"}> {isEn ? "ME" : "MIM"} </Text>
         </Flex>
         <Text
           textAlign={"center"}
@@ -31,14 +34,7 @@ export default function About() {
           fontSize={{ lg: "text2", xl: "text1" }}
           opacity={"60%"}
         >
-          Passionate Full Stack Developer, skilled in creating seamless web
-          experiences and building robust applications. Always eager to explore
-          new technologies and embrace exciting challenges. With a track record
-          of successful projects and a strong foundation in JavaScript, React,
-          Node.js, and more, I am committed to delivering cutting-edge solutions
-          that leave a lasting impact. My dedication to continuous learning
-          drives me to stay ahead of industry trends, ensuring I bring the
-          latest advancements to each project.
+          {filterTranslate("aboutText")}
         </Text>
       </Flex>
       <Flex justify={"center"}>
@@ -48,7 +44,7 @@ export default function About() {
             fontSize={{ lg: "h1", xl: "subTitle" }}
             mb={"90px"}
           >
-            Personal Details
+            {isEn ? "Personal Details" : "Detalhes Pessoais"}
           </Text>
           <Flex
             fontSize={{ lg: "text2", xl: "text1" }}
@@ -81,8 +77,9 @@ export default function About() {
             textStyle={"Bold"}
             fontSize={{ lg: "h1", xl: "subTitle" }}
             mb={"50px"}
+            ml={"30px"}
           >
-            My Interests
+            {isEn ? "My Interests" : "Meus Interesses"}
           </Text>
           <Flex flexWrap={"wrap"} gap={"30px"} px={"20px"} justify={"center"}>
             <CardInterest

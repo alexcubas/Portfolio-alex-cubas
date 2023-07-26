@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
 
 type CardPortfolioType = {
   title: string;
@@ -7,6 +7,7 @@ type CardPortfolioType = {
   srcImg: string;
   textColor?: string;
   idColor?: string;
+  linkHref: string;
 };
 
 export default function CardPortfolio({
@@ -16,50 +17,53 @@ export default function CardPortfolio({
   srcImg,
   idColor,
   textColor,
+  linkHref,
 }: CardPortfolioType) {
   return (
-    <Flex
-      w={"1174px"}
-      h={"357px"}
-      bgImg={srcImg}
-      backgroundRepeat={"no-repeat"}
-      backgroundPosition={"center"}
-      border={"6px solid green"}
-      borderRadius={"20px"}
-      justify={"flex-end"}
-      ml={"65px"}
-      cursor={"grab"}
-    >
+    <Link href={linkHref} isExternal className="no-link-underline">
       <Flex
-        w={"350px"}
-        h={"100%"}
-        bg={"gray.1000"}
-        opacity={"95%"}
-        borderRightRadius={"13px"}
-        direction={"column"}
-        textAlign={"center"}
-        justify={"center"}
-        gap={"15px"}
-        px={"20px"}
+        w={"1174px"}
+        h={"357px"}
+        bgImg={srcImg}
+        backgroundRepeat={"no-repeat"}
+        backgroundPosition={"center"}
+        border={"6px solid green"}
+        borderRadius={"20px"}
+        justify={"flex-end"}
+        ml={"65px"}
+        cursor={"grab"}
       >
         <Flex
-          fontSize={"h1"}
-          textStyle={"Bold"}
+          w={"350px"}
+          h={"100%"}
+          bg={"gray.1000"}
+          opacity={"95%"}
+          borderRightRadius={"13px"}
+          direction={"column"}
+          textAlign={"center"}
           justify={"center"}
           gap={"15px"}
+          px={"20px"}
         >
-          <Text id={idColor} textColor={textColor}>
-            {title}
+          <Flex
+            fontSize={"h1"}
+            textStyle={"Bold"}
+            justify={"center"}
+            gap={"15px"}
+          >
+            <Text id={idColor} textColor={textColor}>
+              {title}
+            </Text>
+            <Text>STORE</Text>
+          </Flex>
+          <Text fontSize={"text2"} textStyle={"Bold"}>
+            {subtitle}
           </Text>
-          <Text>STORE</Text>
+          <Text fontSize={"text3"} textStyle={"Regular"}>
+            {text}
+          </Text>
         </Flex>
-        <Text fontSize={"text2"} textStyle={"Bold"}>
-          {subtitle}
-        </Text>
-        <Text fontSize={"text3"} textStyle={"Regular"}>
-          {text}
-        </Text>
       </Flex>
-    </Flex>
+    </Link>
   );
 }
