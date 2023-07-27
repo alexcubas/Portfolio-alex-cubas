@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
 
 type CardPortfolioType = {
   title: string;
@@ -7,6 +7,7 @@ type CardPortfolioType = {
   srcImg: string;
   textColor?: string;
   idColor?: string;
+  linkHref: string;
 };
 
 export default function CardPortfolioMob({
@@ -16,21 +17,23 @@ export default function CardPortfolioMob({
   srcImg,
   idColor,
   textColor,
+  linkHref,
 }: CardPortfolioType) {
   return (
-    <Flex
-      w={"240px"}
-      h={"460px"}
-      bgImg={srcImg}
-      backgroundRepeat={"no-repeat"}
-      backgroundPosition={"center"}
-      border={"6px solid green"}
-      borderRadius={"20px"}
-      justify={"flex-end"}
-      ml={"65px"}
-      cursor={"grab"}
-    >
-      {/* <Flex
+    <Link href={linkHref} isExternal className="no-link-underline">
+      <Flex
+        w={"240px"}
+        h={"460px"}
+        bgImg={srcImg}
+        backgroundRepeat={"no-repeat"}
+        backgroundPosition={"center"}
+        border={"6px solid green"}
+        borderRadius={"20px"}
+        justify={"flex-end"}
+        ml={"65px"}
+        cursor={"grab"}
+      >
+        {/* <Flex
         w={"350px"}
         h={"100%"}
         bg={"gray.1000"}
@@ -60,6 +63,7 @@ export default function CardPortfolioMob({
           {text}
         </Text>
       </Flex> */}
-    </Flex>
+      </Flex>
+    </Link>
   );
 }
