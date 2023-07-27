@@ -18,7 +18,14 @@ export default function Main() {
     });
   });
   return (
-    <Flex h={"100vh"} justify={"flex-end"} position={"relative"}>
+    <Flex
+      h={"100vh"}
+      justify={"flex-end"}
+      position={"relative"}
+      as={motion.div}
+      initial={{ y: 150, opacity: 0 }}
+      animate={controls}
+    >
       <Flex
         w={"100%"}
         h={"750px"}
@@ -37,9 +44,6 @@ export default function Main() {
         textAlign={"center"}
         textStyle={"Bold"}
         fontSize={{ lg: "text2", xl: "text1" }}
-        as={motion.div}
-        initial={{ y: 150, opacity: 0 }}
-        animate={controls}
       >
         <Text fontSize={{ lg: "subTitle", xl: "title" }}>ALEXSANDRO CUBAS</Text>
         <Text id="gradient" fontSize={{ lg: "h1", xl: "subTitle" }}>

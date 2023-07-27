@@ -27,6 +27,9 @@ export default function AboutMob() {
       direction={"column"}
       pb={"60px"}
       id={"about"}
+      as={motion.div}
+      initial={{ y: 150, opacity: 0 }}
+      animate={controls}
     >
       <Flex
         mt={"20px"}
@@ -34,9 +37,6 @@ export default function AboutMob() {
         w={"100%"}
         align={"center"}
         mb={"50px"}
-        as={motion.div}
-        initial={{ y: 150, opacity: 0 }}
-        animate={controls}
       >
         <Flex textStyle={"Bold"} fontSize={"h1"} gap={"15px"}>
           <Text>{isEn ? "ABOUT" : "SOBRE"}</Text>

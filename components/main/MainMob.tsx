@@ -38,7 +38,7 @@ export default function MainMob() {
         as={motion.div}
         initial={{ y: 150, opacity: 0 }}
         animate={controls}
-        mt={"100px"}
+        mt={"70px"}
       >
         <Text textStyle={"Bold"} fontSize={"h1"} id={"home"}>
           ALEXSANDRO CUBAS
