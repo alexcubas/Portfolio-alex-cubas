@@ -3,7 +3,7 @@ import { Flex, Img, Text } from "@chakra-ui/react";
 type CardStackType = {
   srcImg: string;
   title: string;
-  text: string;
+  text: string | undefined;
   width: string;
   height: string;
 };
@@ -18,7 +18,7 @@ export default function CardStackMob({
   return (
     <Flex
       w={"333px"}
-      h={"400px"}
+      h={"420px"}
       border={"1px solid white"}
       borderRadius={"50px"}
       direction={"column"}

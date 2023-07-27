@@ -7,11 +7,16 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import SwiperCore from "swiper/core";
 import { Navigation, Autoplay } from "swiper/modules";
+import ApplicationContext from "@/contexts/provider/contextTranslate";
+import { useContext } from "react";
+import filterTranslate from "@/utils/filterTranslate";
 
 SwiperCore.use([Autoplay]);
 SwiperCore.use([Navigation]);
 
 export default function Portfolio() {
+  const { isEn } = useContext(ApplicationContext);
+
   return (
     <Flex
       pt={"50px"}
@@ -24,8 +29,8 @@ export default function Portfolio() {
     >
       <Flex h={"auto"} direction={"column"} pb={"60px"}>
         <Flex textStyle={"Bold"} fontSize={"subTitle"} gap={"30px"}>
-          <Text textColor={"green.1000"}>MY</Text>
-          <Text>PORTFOLIO</Text>
+          <Text textColor={"green.1000"}>{isEn ? "MY" : "MEU"}</Text>
+          <Text>{isEn ? "PORTFOLIO" : "PORTIFÓLIO"}</Text>
         </Flex>
       </Flex>
       <Flex align={"center"}>
@@ -50,8 +55,12 @@ export default function Portfolio() {
           <SwiperSlide>
             <CardPortfolio
               title="LINGLONG"
-              subtitle="Linglong Website - Front-end & Project Management"
-              text="As both front-end developer and project manager, I led the development of the LingLong website using Next.js. Our goal: an exceptional, responsive user experience. Despite the 3-month deadline, we delivered a fully functional website. Additionally, I oversaw a dynamic dashboard for price updates and promotions. Worked with a skilled team of three front-end developers to achieve project success."
+              subtitle={
+                isEn
+                  ? "Linglong Website - Front-end & Project Management"
+                  : "Linglong Website - Front-end e Gerenciamento de Projetos"
+              }
+              text={filterTranslate("portL")}
               srcImg="/linglong-port.png"
               idColor="gradient"
               linkHref="https://lojalinglong.com.br/"
@@ -60,8 +69,12 @@ export default function Portfolio() {
           <SwiperSlide>
             <CardPortfolio
               title="MICHELIN"
-              subtitle="Tire E-commerce Website"
-              text="As part of a team of three front-end developers, I led the development of the front-end for the Michelin website using Next.js. Our primary goal was to deliver an outstanding customer experience through a responsive and user-friendly website. The project was successfully completed over a span of 18 months."
+              subtitle={
+                isEn
+                  ? "Tire E-commerce Website"
+                  : "Website de comércio de pneus"
+              }
+              text={filterTranslate("portM")}
               srcImg="/michelin-port.png"
               textColor="#27509B"
               linkHref="https://michelin.pneufree.com.br/"
@@ -70,8 +83,12 @@ export default function Portfolio() {
           <SwiperSlide>
             <CardPortfolio
               title="XBRI"
-              subtitle="Tire E-commerce Website"
-              text="I played a crucial role in the front-end development of a Next.js website, where our main focus was to provide an exceptional customer experience with a responsive and user-friendly interface. The project was successfully completed in just 9 months, with a collaborative effort involving a team of skilled front-end developers."
+              subtitle={
+                isEn
+                  ? "Tire E-commerce Website"
+                  : "Website de comércio de pneus"
+              }
+              text={filterTranslate("portX")}
               srcImg="/xbri-port.png"
               textColor="#E3151A"
               linkHref="https://xbri.com.br/"

@@ -1,9 +1,11 @@
+import ApplicationContext from "@/contexts/provider/contextTranslate";
 import { Flex, Link, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 
 type CardPortfolioType = {
   title: string;
   subtitle: String;
-  text: string;
+  text: string | undefined;
   srcImg: string;
   textColor?: string;
   idColor?: string;
@@ -19,6 +21,7 @@ export default function CardPortfolio({
   textColor,
   linkHref,
 }: CardPortfolioType) {
+  const { isEn } = useContext(ApplicationContext);
   return (
     <Link href={linkHref} isExternal className="no-link-underline">
       <Flex
@@ -42,7 +45,7 @@ export default function CardPortfolio({
           direction={"column"}
           textAlign={"center"}
           justify={"center"}
-          gap={"15px"}
+          gap={"5px"}
           px={"20px"}
         >
           <Flex
@@ -51,10 +54,21 @@ export default function CardPortfolio({
             justify={"center"}
             gap={"15px"}
           >
-            <Text id={idColor} textColor={textColor}>
-              {title}
-            </Text>
-            <Text>STORE</Text>
+            {isEn ? (
+              <>
+                <Text id={idColor} textColor={textColor}>
+                  {title}
+                </Text>
+                <Text>STORE</Text>
+              </>
+            ) : (
+              <>
+                <Text>LOJA</Text>
+                <Text id={idColor} textColor={textColor}>
+                  {title}
+                </Text>
+              </>
+            )}
           </Flex>
           <Text fontSize={"text2"} textStyle={"Bold"}>
             {subtitle}

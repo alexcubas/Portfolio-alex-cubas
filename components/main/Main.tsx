@@ -31,7 +31,7 @@ export default function Main() {
       <Flex
         direction={"column"}
         h={"100%"}
-        w={"900px"}
+        w={"70%"}
         align={"center"}
         justify={"center"}
         textAlign={"center"}

@@ -7,11 +7,15 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import SwiperCore from "swiper/core";
 import { Navigation, Autoplay } from "swiper/modules";
+import ApplicationContext from "@/contexts/provider/contextTranslate";
+import { useContext } from "react";
 
 SwiperCore.use([Autoplay]);
 SwiperCore.use([Navigation]);
 
 export default function PortfolioMob() {
+  const { isEn } = useContext(ApplicationContext);
+
   return (
     <Flex
       pt={"20px"}
@@ -24,8 +28,8 @@ export default function PortfolioMob() {
     >
       <Flex h={"auto"} direction={"column"} pb={"20px"}>
         <Flex textStyle={"Bold"} fontSize={"h1"} gap={"15px"}>
-          <Text textColor={"green.1000"}>MY</Text>
-          <Text>PORTFOLIO</Text>
+          <Text textColor={"green.1000"}>{isEn ? "MY" : "MEU"}</Text>
+          <Text>{isEn ? "PORTFOLIO" : "PORTIFÓLIO"}</Text>
         </Flex>
       </Flex>
       <Flex align={"center"}>

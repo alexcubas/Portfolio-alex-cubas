@@ -57,18 +57,18 @@ export default function About() {
               direction={"column"}
               gap={"20px"}
             >
-              <Text>Age:</Text>
+              <Text>{isEn ? "Age:" : "Idade:"}</Text>
               <Text>Email:</Text>
-              <Text>Phone:</Text>
-              <Text>Address:</Text>
-              <Text>Languages:</Text>
+              <Text>{isEn ? "Phone:" : "Telefone:"}</Text>
+              <Text>{isEn ? "Address:" : "Endereço:"}</Text>
+              <Text>{isEn ? "Languages:" : "Línguas:"}</Text>
             </Flex>
             <Flex direction={"column"} textStyle={"Regular"} gap={"20px"}>
-              <Text>25 Years</Text>
+              <Text>{isEn ? "25 Years" : "25 Anos"}</Text>
               <Text>alex_cubas1.0@hotmail.com</Text>
               <Text>+55 (41) 99238-0193</Text>
-              <Text>Brazil</Text>
-              <Text>English, Portuguese</Text>
+              <Text>{isEn ? "Brazil" : "Brasil"}</Text>
+              <Text>{isEn ? "English, Portuguese" : "Inglês, Português"}</Text>
             </Flex>
           </Flex>
         </Flex>
@@ -84,49 +84,49 @@ export default function About() {
           <Flex flexWrap={"wrap"} gap={"30px"} px={"20px"} justify={"center"}>
             <CardInterest
               imagemSrc="game-icon.svg"
-              text="GAMES"
+              text={isEn ? "GAMES" : "JOGOS"}
               width="100px"
               height="55px"
             />
             <CardInterest
               imagemSrc="music-icon.svg"
-              text="MUSIC"
+              text={isEn ? "MUSIC" : "MUSICA"}
               width="73px"
               height="73px"
             />
             <CardInterest
               imagemSrc="coffee-icon.svg"
-              text="COFFEE"
+              text={isEn ? "COFFEE" : "CAFÉ"}
               width="76px"
               height="76px"
             />
             <CardInterest
               imagemSrc="gym-icon.svg"
-              text="GYM"
+              text={isEn ? "GYM" : "ACADEMIA"}
               width="100px"
               height="50px"
             />
             <CardInterest
               imagemSrc="series-icon.svg"
-              text="SERIES"
+              text={isEn ? "SERIES" : "SÉRIES"}
               width="83px"
               height="58px"
             />
             <CardInterest
               imagemSrc="travel-icon.svg"
-              text="TRAVEL"
+              text={isEn ? "TRAVEL" : "VIAJAR"}
               width="74px"
               height="74px"
             />
             <CardInterest
               imagemSrc="investment-icon.svg"
-              text="INVESTMENT"
+              text={isEn ? "INVESTIMENT" : "INVESTIMENTO"}
               width="94px"
               height="94px"
             />
             <CardInterest
               imagemSrc="food-icon.png"
-              text="FOOD"
+              text={isEn ? "FOOD" : "COMIDA"}
               width="83px"
               height="82px"
             />

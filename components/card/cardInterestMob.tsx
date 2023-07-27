@@ -35,7 +35,7 @@ export default function CardInterestMob({
         bottom={"10px"}
         position={"absolute"}
         textStyle={"Bold"}
-        fontSize={"text1"}
+        fontSize={"text2"}
       >
         {text}
       </Text>

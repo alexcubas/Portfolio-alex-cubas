@@ -1,6 +1,10 @@
+import ApplicationContext from "@/contexts/provider/contextTranslate";
 import { Flex, Img, Link, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 
 export default function Contact() {
+  const { isEn } = useContext(ApplicationContext);
+
   return (
     <Flex
       pt={"50px"}
@@ -12,8 +16,16 @@ export default function Contact() {
     >
       <Flex h={"auto"} direction={"column"} pb={"60px"}>
         <Flex textStyle={"Bold"} fontSize={"subTitle"} gap={"30px"}>
-          <Text>CONTACT</Text>
-          <Text textColor={"green.1000"}>ME</Text>
+          {isEn ? (
+            <>
+              <Text>CONTACT</Text>
+              <Text textColor={"green.1000"}>ME</Text>
+            </>
+          ) : (
+            <>
+              <Text textColor={"green.1000"}>CONTATO</Text>
+            </>
+          )}
         </Flex>
       </Flex>
       <Flex
@@ -34,7 +46,7 @@ export default function Contact() {
         <Flex direction={"column"} gap={"10px"} align={"center"}>
           <Flex gap={"15px"}>
             <Img src={"/icons/contact/phone-icon.svg"} />
-            <Text>Phone Number</Text>
+            <Text>{isEn ? "Phone Number" : "Número de Telefone"}</Text>
           </Flex>
           <Link href={`tel:55+ (41) 99238-0193`}>
             <Text fontSize={"text2"}>55+ (41) 99238-0193</Text>
@@ -43,7 +55,7 @@ export default function Contact() {
         <Flex direction={"column"} gap={"10px"} align={"center"}>
           <Flex gap={"15px"}>
             <Img src={"/icons/contact/media-icon.svg"} />
-            <Text>Social media</Text>
+            <Text>{isEn ? "Social Media" : "Mídia Social"}</Text>
           </Flex>
           <Flex gap={"30px"}>
             <Link href="https://github.com/alexcubas" isExternal>

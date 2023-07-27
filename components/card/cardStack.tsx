@@ -3,7 +3,7 @@ import { Flex, Img, Text } from "@chakra-ui/react";
 type CardStackType = {
   srcImg: string;
   title: string;
-  text: string;
+  text: string | undefined;
   width: string;
   height: string;
 };

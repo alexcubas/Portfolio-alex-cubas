@@ -1,6 +1,10 @@
+import ApplicationContext from "@/contexts/provider/contextTranslate";
 import { Flex, Img, Link, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 
 export default function ContactMob() {
+  const { isEn } = useContext(ApplicationContext);
+
   return (
     <Flex
       pt={"30px"}
@@ -11,8 +15,16 @@ export default function ContactMob() {
     >
       <Flex h={"auto"} direction={"column"} pb={"30px"}>
         <Flex textStyle={"Bold"} fontSize={"h1"} gap={"15px"}>
-          <Text>CONTACT</Text>
-          <Text textColor={"green.1000"}>ME</Text>
+          {isEn ? (
+            <>
+              <Text>CONTACT</Text>
+              <Text textColor={"green.1000"}>ME</Text>
+            </>
+          ) : (
+            <>
+              <Text textColor={"green.1000"}>CONTATO</Text>
+            </>
+          )}
         </Flex>
       </Flex>
       <Flex

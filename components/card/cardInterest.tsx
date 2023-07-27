@@ -15,7 +15,7 @@ export default function CardInterest({
 }: CardInterestType) {
   return (
     <Flex
-      w={"240px"}
+      w={"250px"}
       h={"145px"}
       border={"1px solid white"}
       borderRadius={"50px"}
