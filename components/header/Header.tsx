@@ -72,7 +72,7 @@ export default function HeaderDesktop() {
           to="home"
           spy={true}
           smooth={true}
-          duration={500}
+          duration={300}
           offset={-200}
           onSetActive={() => handleSetActiveSection("home")}
         >
@@ -90,7 +90,7 @@ export default function HeaderDesktop() {
           to="about"
           spy={true}
           smooth={true}
-          duration={500}
+          duration={300}
           offset={-80}
           onSetActive={() => {
             console.log("n entrou aq?");
@@ -111,7 +111,7 @@ export default function HeaderDesktop() {
           to="stack"
           spy={true}
           smooth={true}
-          duration={500}
+          duration={300}
           offset={-100}
           onSetActive={() => handleSetActiveSection("stack")}
         >
@@ -129,7 +129,7 @@ export default function HeaderDesktop() {
           to="port"
           spy={true}
           smooth={true}
-          duration={500}
+          duration={300}
           offset={-80}
           onSetActive={() => handleSetActiveSection("port")}
         >

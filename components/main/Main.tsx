@@ -33,7 +33,7 @@ export default function Main() {
         bgImage={"/background-img.png"}
         bottom={0}
         zIndex={"-1"}
-        id={"home"}
+        className={"home"}
       />
       <Flex
         direction={"column"}

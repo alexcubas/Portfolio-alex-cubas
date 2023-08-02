@@ -4,9 +4,22 @@ import interestsMap from "../../public/arrayInterest.json";
 import CardInterest from "../card/cardInterest";
 import ApplicationContext from "@/contexts/provider/contextTranslate";
 import filterTranslate from "@/utils/filterTranslate";
+import { motion, useAnimation } from "framer-motion";
 
 export default function About() {
   const { isEn } = useContext(ApplicationContext);
+  const controls = useAnimation();
+  useEffect(() => {
+    controls.start({
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.0,
+        delay: 0.3,
+        ease: [0, 0.3, 0.6, 1.0],
+      },
+    });
+  });
   return (
     <Flex
       w={"100%"}
@@ -15,6 +28,9 @@ export default function About() {
       direction={"column"}
       pb={"60px"}
       id={"about"}
+      as={motion.div}
+      initial={{ y: 150, opacity: 0 }}
+      animate={controls}
     >
       <Flex
         mt={"30px"}

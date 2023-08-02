@@ -84,7 +84,7 @@ export default function HeaderMob() {
                   to="home"
                   spy={true}
                   smooth={true}
-                  duration={500}
+                  duration={300}
                   offset={-200}
                   onSetActive={() => handleSetActiveSection("home")}
                 >
@@ -106,18 +106,11 @@ export default function HeaderMob() {
                   to="about"
                   spy={true}
                   smooth={true}
-                  duration={500}
+                  duration={300}
                   offset={-80}
                   onSetActive={() => handleSetActiveSection("about")}
                 >
                   <Flex align={"center"} gap={"10px"}>
-                    {/* <Flex
-                      bg={"green.1000"}
-                      w="15px"
-                      h="15px"
-                      borderRadius={"50px"}
-                      display={activeSection === "about" ? "flex" : "none"}
-                    /> */}
                     <Text onClick={() => onClose()}>
                       {filterTranslate("headerA")}
                     </Text>
@@ -128,7 +121,7 @@ export default function HeaderMob() {
                   to="stack"
                   spy={true}
                   smooth={true}
-                  duration={500}
+                  duration={300}
                   offset={-100}
                   onSetActive={() => handleSetActiveSection("stack")}
                 >
@@ -150,7 +143,7 @@ export default function HeaderMob() {
                   to="port"
                   spy={true}
                   smooth={true}
-                  duration={500}
+                  duration={300}
                   offset={-80}
                   onSetActive={() => handleSetActiveSection("port")}
                 >

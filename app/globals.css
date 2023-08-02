@@ -9,6 +9,16 @@
   text-decoration: none !important;
 }
 
+html {
+  scroll-behavior: smooth; /* Adiciona a transição suave ao rolar */
+}
+
+.section {
+  margin: 100vh 0; /* Cria espaço suficiente para as seções */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   color: #12a652 !important;

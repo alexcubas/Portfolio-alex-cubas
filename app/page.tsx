@@ -36,14 +36,26 @@ export default function Home() {
 
   return (
     <Flex>
-      <Flex direction={"column"} display={isWideVersion ? "flex" : "none"}>
+      {!isWideVersion ? (
+        <Flex direction={"column"}>
+          <HeaderDesktop /> <Main /> <About /> <Stacks /> <Portfolio />
+          <Contact />
+        </Flex>
+      ) : (
+        <Flex direction={"column"}>
+          <HeaderMob /> <MainMob /> <AboutMob /> <StacksMob /> <PortfolioMob />
+          <ContactMob />
+        </Flex>
+      )}
+
+      {/* <Flex direction={"column"} display={!isWideVersion ? "none" : "flex"}>
         <HeaderMob /> <MainMob /> <AboutMob /> <StacksMob /> <PortfolioMob />
         <ContactMob />
       </Flex>
-      <Flex direction={"column"} display={!isWideVersion ? "flex" : "none"}>
+      <Flex direction={"column"} display={isWideVersion ? "none" : "flex"}>
         <HeaderDesktop /> <Main /> <About /> <Stacks /> <Portfolio />
         <Contact />
-      </Flex>
+      </Flex> */}
     </Flex>
   );
 }
